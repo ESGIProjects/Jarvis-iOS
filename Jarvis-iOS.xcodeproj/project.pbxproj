@@ -126,7 +126,7 @@
 				TargetAttributes = {
 					D7D9ABCB1F17B55B0080CD81 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 5RUJTG3BGA;
+						DevelopmentTeam = J4T8PC422B;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -343,8 +343,9 @@
 			baseConfigurationReference = 947EE76F3F2A403EC3A9E35C /* Pods-Jarvis-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5RUJTG3BGA;
+				DEVELOPMENT_TEAM = J4T8PC422B;
 				INFOPLIST_FILE = "Jarvis-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jpierna.Jarvis-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -357,8 +358,9 @@
 			baseConfigurationReference = F00035C3994FB41FCA52AE60 /* Pods-Jarvis-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5RUJTG3BGA;
+				DEVELOPMENT_TEAM = J4T8PC422B;
 				INFOPLIST_FILE = "Jarvis-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jpierna.Jarvis-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
