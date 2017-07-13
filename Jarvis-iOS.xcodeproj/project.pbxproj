@@ -13,6 +13,7 @@
 		D7D9ABD51F17B55B0080CD81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D9ABD31F17B55B0080CD81 /* Main.storyboard */; };
 		D7D9ABD71F17B55B0080CD81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7D9ABD61F17B55B0080CD81 /* Assets.xcassets */; };
 		D7D9ABDA1F17B55B0080CD81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D9ABD81F17B55B0080CD81 /* LaunchScreen.storyboard */; };
+		D7D9ABE21F17DCA20080CD81 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9ABE11F17DCA20080CD81 /* PasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		D7D9ABD61F17B55B0080CD81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7D9ABD91F17B55B0080CD81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7D9ABDB1F17B55B0080CD81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7D9ABE11F17DCA20080CD81 /* PasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		F00035C3994FB41FCA52AE60 /* Pods-Jarvis-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jarvis-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jarvis-iOS/Pods-Jarvis-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 			children = (
 				D7D9ABCF1F17B55B0080CD81 /* AppDelegate.swift */,
 				D7D9ABD11F17B55B0080CD81 /* AddressViewController.swift */,
+				D7D9ABE11F17DCA20080CD81 /* PasswordViewController.swift */,
 				D7D9ABD31F17B55B0080CD81 /* Main.storyboard */,
 				D7D9ABD61F17B55B0080CD81 /* Assets.xcassets */,
 				D7D9ABD81F17B55B0080CD81 /* LaunchScreen.storyboard */,
@@ -214,6 +217,7 @@
 			files = (
 				D7D9ABD21F17B55B0080CD81 /* AddressViewController.swift in Sources */,
 				D7D9ABD01F17B55B0080CD81 /* AppDelegate.swift in Sources */,
+				D7D9ABE21F17DCA20080CD81 /* PasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +385,7 @@
 				D7D9ABE01F17B55B0080CD81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

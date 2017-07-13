@@ -1,5 +1,5 @@
 //
-//  AddressViewController.swift
+//  PasswordViewController.swift
 //  Jarvis-iOS
 //
 //  Created by Jason Pierna on 13/07/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddressViewController: UIViewController {
+class PasswordViewController: UIViewController {
 	
 	@IBOutlet weak var addressTextField: UITextField!
 	
@@ -19,7 +19,7 @@ class AddressViewController: UIViewController {
 		let defaults = UserDefaults.standard
 		if let address = defaults.object(forKey: "ip") as? String {
 			addressTextField.text = address
-		}		
+		}
 	}
 	
 	@IBAction func saveAddress() {
@@ -42,7 +42,7 @@ class AddressViewController: UIViewController {
 	
 }
 
-extension AddressViewController: UITextFieldDelegate {
+extension PasswordViewController: UITextFieldDelegate {
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		saveAddress()

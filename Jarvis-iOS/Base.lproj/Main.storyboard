@@ -13,7 +13,7 @@
         <!--Jarvis-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AddressViewController" customModule="Jarvis_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -31,11 +31,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mWq-OO-P15">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mWq-OO-P15">
                                         <rect key="frame" x="0.0" y="61" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="IDW-W7-XTc"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p02-dT-wPD">
                                         <rect key="frame" x="0.0" y="111" width="343" height="30"/>
@@ -60,7 +63,7 @@
         <!--Jarvis-->
         <scene sceneID="ilD-Cn-LnL">
             <objects>
-                <viewController id="ImP-1g-GZT" sceneMemberID="viewController">
+                <viewController id="ImP-1g-GZT" customClass="AddressViewController" customModule="Jarvis_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4qG-uR-3Ns"/>
                         <viewControllerLayoutGuide type="bottom" id="FgM-QP-jEZ"/>
@@ -82,11 +85,17 @@
                                         <rect key="frame" x="0.0" y="40.5" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ImP-1g-GZT" id="T9C-5Z-0aW"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6g-XT-bwV">
                                         <rect key="frame" x="0.0" y="90.5" width="343" height="30"/>
                                         <state key="normal" title="Enregistrer"/>
+                                        <connections>
+                                            <action selector="saveAddress" destination="ImP-1g-GZT" eventType="touchUpInside" id="CpZ-fi-yNE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -99,6 +108,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Jarvis" id="R6v-uU-ygl"/>
+                    <connections>
+                        <outlet property="addressTextField" destination="jHO-if-XGc" id="kOa-Od-WXT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n28-pB-WfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -129,6 +141,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uew-js-4ez" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="3j5-3b-l42">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
