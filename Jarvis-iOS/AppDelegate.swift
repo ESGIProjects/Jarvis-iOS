@@ -10,6 +10,7 @@ import UIKit
 import UserNotifications
 
 import Firebase
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,41 +24,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		Messaging.messaging().delegate = self
 		
-		if #available(iOS 10.0, *) {
-			UNUserNotificationCenter.current().delegate = self
-			
-			let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-			UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: { _, _ in })
-		} else {
-			let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-			application.registerUserNotificationSettings(settings)
-		}
+		UNUserNotificationCenter.current().delegate = self
+		
+		let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+		UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: { _, _ in })
 		
 		application.registerForRemoteNotifications()
-		
+
 		return true
 	}
 	
-	func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-		if let messageID = userInfo[gcmMessageIDKey] {
-			print("Message ID: \(messageID)")
-		}
-		
-		print(userInfo)
-		
-		completionHandler(.newData)
+	func applicationWillEnterForeground(_ application: UIApplication) {
+		UIApplication.shared.applicationIconBadgeNumber = 0
 	}
 }
 
-@available(iOS 10.0, *)
 extension AppDelegate: UNUserNotificationCenterDelegate {
+	
 	func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
 		let userInfo = notification.request.content.userInfo
 		
 		if let messageID = userInfo[gcmMessageIDKey] {
 			print("Message ID: \(messageID)")
 		}
-		
 		print(userInfo)
 		
 		completionHandler([])
@@ -67,6 +56,16 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 extension AppDelegate: MessagingDelegate {
 	func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
 		print("Firebase registration token: \(fcmToken)")
+		
+		let url = "http://jarvis-esgi.herokuapp.com/api/registerToken"
+		let parameters = [
+			"deviceToken" : fcmToken,
+			"os" : "ios"
+		]
+		
+		Alamofire.request(url, method: .post, parameters: parameters).responseJSON { response in
+			print(response.description)
+		}
 	}
 	
 	func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
