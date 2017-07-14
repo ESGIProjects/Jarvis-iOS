@@ -14,6 +14,7 @@
 		D7D9ABD71F17B55B0080CD81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7D9ABD61F17B55B0080CD81 /* Assets.xcassets */; };
 		D7D9ABDA1F17B55B0080CD81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D9ABD81F17B55B0080CD81 /* LaunchScreen.storyboard */; };
 		D7D9ABE21F17DCA20080CD81 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9ABE11F17DCA20080CD81 /* PasswordViewController.swift */; };
+		D7D9ABE51F18EED30080CD81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7D9ABE41F18EED30080CD81 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		D7D9ABD91F17B55B0080CD81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7D9ABDB1F17B55B0080CD81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7D9ABE11F17DCA20080CD81 /* PasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		D7D9ABE31F1813290080CD81 /* Jarvis-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Jarvis-iOS.entitlements"; sourceTree = "<group>"; };
+		D7D9ABE41F18EED30080CD81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F00035C3994FB41FCA52AE60 /* Pods-Jarvis-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jarvis-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jarvis-iOS/Pods-Jarvis-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,12 +83,14 @@
 		D7D9ABCE1F17B55B0080CD81 /* Jarvis-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				D7D9ABE31F1813290080CD81 /* Jarvis-iOS.entitlements */,
 				D7D9ABCF1F17B55B0080CD81 /* AppDelegate.swift */,
 				D7D9ABD11F17B55B0080CD81 /* AddressViewController.swift */,
 				D7D9ABE11F17DCA20080CD81 /* PasswordViewController.swift */,
 				D7D9ABD31F17B55B0080CD81 /* Main.storyboard */,
 				D7D9ABD61F17B55B0080CD81 /* Assets.xcassets */,
 				D7D9ABD81F17B55B0080CD81 /* LaunchScreen.storyboard */,
+				D7D9ABE41F18EED30080CD81 /* GoogleService-Info.plist */,
 				D7D9ABDB1F17B55B0080CD81 /* Info.plist */,
 			);
 			path = "Jarvis-iOS";
@@ -128,6 +133,14 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = J4T8PC422B;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -155,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7D9ABDA1F17B55B0080CD81 /* LaunchScreen.storyboard in Resources */,
+				D7D9ABE51F18EED30080CD81 /* GoogleService-Info.plist in Resources */,
 				D7D9ABD71F17B55B0080CD81 /* Assets.xcassets in Resources */,
 				D7D9ABD51F17B55B0080CD81 /* Main.storyboard in Resources */,
 			);
@@ -343,11 +357,12 @@
 			baseConfigurationReference = 947EE76F3F2A403EC3A9E35C /* Pods-Jarvis-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Jarvis-iOS/Jarvis-iOS.entitlements";
 				DEVELOPMENT_TEAM = J4T8PC422B;
 				INFOPLIST_FILE = "Jarvis-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jpierna.Jarvis-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jpierna.jarvis-ios-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -358,11 +373,12 @@
 			baseConfigurationReference = F00035C3994FB41FCA52AE60 /* Pods-Jarvis-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Jarvis-iOS/Jarvis-iOS.entitlements";
 				DEVELOPMENT_TEAM = J4T8PC422B;
 				INFOPLIST_FILE = "Jarvis-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jpierna.Jarvis-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jpierna.jarvis-ios-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

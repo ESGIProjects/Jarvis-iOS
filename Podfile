@@ -7,7 +7,8 @@ target 'Jarvis-iOS' do
 
   # Pods for Jarvis-iOS
   pod 'Alamofire'
-  pod 'Firebase'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
   pod 'PKHUD'
 
 end
